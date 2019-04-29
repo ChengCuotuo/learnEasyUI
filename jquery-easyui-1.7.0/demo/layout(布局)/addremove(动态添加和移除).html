@@ -20,6 +20,8 @@
 			<option value="east">East</option>
 			<option value="west">West</option>
 		</select>
+		<!--添加和移除功能的按钮，这是一组超链接按钮，可以显示图标和文本，或者仅仅显示其中图标或文本
+		onclick 是用来处理点击事件-->
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="addPanel()">Add</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="removePanel()">Remove</a>
 	</div>
@@ -32,20 +34,26 @@
 	</div>
 	<script type="text/javascript">
 		function addPanel(){
+			//获取下拉菜单中选择的方位
 			var region = $('#region').val();
+			//通过获取的区域名称，生成一个新的区域
 			var options = {
 				region: region
 			};
+			//如果区域是 north 或者 south 就修改它的高度
 			if (region=='north' || region=='south'){
 				options.height = 50;
 			} else {
+				//如果是 east 或者 west 设置宽度，分裂，设置标题为选中的下拉菜单的值
 				options.width = 100;
 				options.split = true;
 				options.title = $('#region option:selected').text();
 			}
+			//添加布局
 			$('#cc').layout('add', options);
 		}
 		function removePanel(){
+			//移除布局
 			$('#cc').layout('remove', $('#region').val());
 		}
 	</script>
