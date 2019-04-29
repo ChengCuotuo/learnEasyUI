@@ -13,13 +13,18 @@
 	<h2>Complex Layout</h2>
 	<p>This sample shows how to create a complex layout.</p>
 	<div style="margin:20px 0;"></div>
+	<!--复杂的布局，实际上就是各种布局的嵌套-->
 	<div class="easyui-layout" style="width:700px;height:350px;">
 		<div data-options="region:'north'" style="height:50px"></div>
 		<div data-options="region:'south',split:true" style="height:50px;"></div>
+		<!--在 east 方位的面板中嵌套一个树
+		animation 动画显示收缩和展开
+		dnd 是否允许拖放-->
 		<div data-options="region:'east',split:true" title="East" style="width:180px;">
 			<ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true,dnd:true"></ul>
 		</div>
 		<div data-options="region:'west',split:true" title="West" style="width:100px;">
+			<!--嵌套一个折叠面板，也就是手风琴-->
 			<div class="easyui-accordion" data-options="fit:true,border:false">
 				<div title="Title1" style="padding:10px;">
 					content1
@@ -32,6 +37,7 @@
 				</div>
 			</div>
 		</div>
+		<!--中心面板中先嵌套了一个标签页/选项卡，在其中一个标签页中又嵌套了一个数据网格-->
 		<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
 			<div class="easyui-tabs" data-options="fit:true,border:false,plain:true">
 				<div title="About" data-options="href:'_content.html'" style="padding:10px"></div>

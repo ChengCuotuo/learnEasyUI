@@ -16,9 +16,17 @@
 	<div class="easyui-layout" style="width:700px;height:350px;">
 		<div data-options="region:'north'" style="height:50px"></div>
 		<div data-options="region:'south',split:true" style="height:50px;"></div>
+		<!--于 center 面板分裂， hideCollapsedContent隐藏折叠的内容，其实就是是否隐藏标题-->
 		<div data-options="region:'east',split:true,hideCollapsedContent:false" title="East" style="width:100px;"></div>
 		<div data-options="region:'west',split:true,hideCollapsedContent:false,collapsed:true" title="West" style="width:100px;"></div>
 		<div data-options="region:'center',title:'Main Title'">
+			<!--数据网格
+			fit 取值为true 的时候将自适应宽度，网格每一列的宽度并没有改变，只是自动扩展网格
+			fitColumns 自动扩大或缩小列的尺寸以适应网格的宽度并且防止水平滚动
+			两者同时使用就可以实现在增加网格整体宽度的时候，自动将宽度平均的分配给每一列
+			使用 get 方法获取 json 数据
+			singleSelect 取值为 true 允许但选中，取值为false可以选中多个值
+			-->
 			<table class="easyui-datagrid"
 					data-options="url:'datagrid_data1.json',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true">
 				<thead>

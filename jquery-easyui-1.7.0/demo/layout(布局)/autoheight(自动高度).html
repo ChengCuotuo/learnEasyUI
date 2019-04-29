@@ -13,10 +13,13 @@
 	<h2>Auto Height for Layout</h2>
 	<p>This example shows how to auto adjust layout height after dynamically adding items.</p>
 	<div style="margin:20px 0;">
+		<!--超链接按钮，它有一个普通的<a>标签表示，可以显示图标或文本，按钮的宽度可以自动的扩展以适应
+		图标或文本-->
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="addItem()">Add Item</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="removeItem()">Remove Item</a>
 	</div>
 	<div id="cc" style="width:700px;height:350px;">
+		<!--布局，north south west center， 在center中添加了一些文本-->
 		<div data-options="region:'north'" style="height:50px"></div>
 		<div data-options="region:'south'" style="height:50px;"></div>
 		<div data-options="region:'west'" style="width:150px;"></div>
@@ -30,26 +33,35 @@
 	</div>
 	<script type="text/javascript">
 		$(function(){
+			//网页加载完成之后，调用 div #cc 执行布局
+			// 如果指定 #cc 的属性 class 为 easyui-layout和调用 layout 实现的效果相同
+			// 并设置自适应高度
 			$('#cc').layout();
 			setHeight();
 		});
-		
+		//在面板中添加一行文本，响应Add Item超链接按钮
 		function addItem(){
+			//选中 center 布局区域，在其中添加文本标签
 			$('#cc').layout('panel','center').append('<p>More Panel Content.</p>');
 			setHeight();
 		}
-		
+		//在面板中删除最后一行文本
 		function removeItem(){
 			$('#cc').layout('panel','center').find('p:last').remove();
 			setHeight();
 		}
-		
+		//设置自适应的高度，需要修改的是 #cc div 中的 center 面板高度
 		function setHeight(){
 			var c = $('#cc');
+			//这里获取的布局内的 center 的面板的高度，不是布局边框的高度，
+			//如果设置了边框的高度，内容面板中内容过多的话将出现滚动条
+			//为了不显示滚动条就要重新定义边框的高度
 			var p = c.layout('panel','center');	// get the center panel
 			var oldHeight = p.panel('panel').outerHeight();
+			//重新设置，将高度自动更新，并获取更新之后的高度值
 			p.panel('resize', {height:'auto'});
 			var newHeight = p.panel('panel').outerHeight();
+			//重新定义高度值
 			c.layout('resize',{
 				height: (c.height() + newHeight - oldHeight)
 			});

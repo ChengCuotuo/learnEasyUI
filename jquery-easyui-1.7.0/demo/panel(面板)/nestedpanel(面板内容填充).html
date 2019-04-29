@@ -13,7 +13,9 @@
 	<h2>Nested Panel</h2>
 	<p>The panel can be placed inside containers and can contain other components.</p>
 	<div style="margin:20px 0 10px 0;"></div>
+	<!--在面板中添加新的布局内容-->
 	<div class="easyui-panel" title="Nested Panel" style="width:700px;height:200px;padding:10px;">
+		<!--属性 fit 设置为 true 的时候，面板的尺寸将自适应去父类面板-->
 		<div class="easyui-layout" data-options="fit:true">
 			<div data-options="region:'west',split:true" style="width:100px;padding:10px">
 				Left Content
