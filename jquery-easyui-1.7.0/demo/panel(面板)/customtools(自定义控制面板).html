@@ -13,6 +13,8 @@
 	<h2>Custom Panel Tools</h2>
 	<p>Click the right top buttons to perform actions with panel.</p>
 	<div style="margin:20px 0 10px 0;"></div>
+	<!--自定义控制面板，为面板添加一些功能
+	设置图标，允许被关闭，也可以使用自定义的功能， 在 #tt 中定义-->
 	<div class="easyui-panel" title="Custom Panel Tools" style="width:700px;height:200px;padding:10px;"
 			data-options="iconCls:'icon-save',closable:true,tools:'#tt'">
 		<p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
@@ -25,6 +27,8 @@
 			<li>easyui is very easy but powerful.</li>
 		</ul>
 	</div>
+	<!--使用的依然是一系列的超链接按钮，为每个标签指定了类别，添加，编辑，剪切，帮助，将使用默认的标签显示
+	这些被点击之后的响应，写在了单独的方法中-->
 	<div id="tt">
 		<a href="javascript:void(0)" class="icon-add" onclick="javascript:alert('add')"></a>
 		<a href="javascript:void(0)" class="icon-edit" onclick="javascript:alert('edit')"></a>

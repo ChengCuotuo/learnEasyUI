@@ -13,6 +13,10 @@
 	<h2>Load Panel Content</h2>
 	<p>Click the refresh button on top right of panel to load content.</p>
 	<div style="margin:20px 0 10px 0;"></div>
+	<!--为面板添加刷新工具，或者说是一个文本加载工具
+	在 data-options 中添加工具，设置 tools 的属性值，工具的图标是重新加载图标，
+	执行的功能是指定面板刷新，显示 _content.html 的文本
+	-->
 	<div id="p" class="easyui-panel" title="Load Panel Content" style="width:700px;height:200px;padding:10px;"
 			data-options="
 				tools:[{
@@ -22,6 +26,10 @@
 					}
 				}]
 			">
+	</div>
+	<!--可以通过 href 发送请求直接获取数据内容
+	请注意，除非面板（panel）打开，否则内容不会被加载。这对创建一个惰性加载的面板（panel）很有用-->
+	<div id="p" class="easyui-panel" href="_content.html" title="Load Panel Content" style="width:700px;height:200px;padding:10px;">
 	</div>
 </body>
 </html>

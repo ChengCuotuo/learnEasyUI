@@ -19,6 +19,8 @@
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#p').panel('collapse',true)">Collapse</a>
 	</div>
 	<div class="easyui-panel" style="height:350px;padding:5px;">
+		<!--在 data-options 中指定工具内容，有collapsible 折叠，minimizable 最小化，
+		maximizable 最大化， 最大化会自适应其父标签的大小，closable 可关闭-->
 		<div id="p" class="easyui-panel" title="Panel Tools" style="width:600px;height:200px;padding:10px;"
 				data-options="iconCls:'icon-save',collapsible:true,minimizable:true,maximizable:true,closable:true">
 			<p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
