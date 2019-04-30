@@ -14,11 +14,13 @@
 	<p>This example shows how to validate the tagbox values.</p>
 	<div style="margin:20px 0;"></div>
 	<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+		<!-- 验证格式放在 data-options 的 validType 中 -->
 		<input class="easyui-tagbox" value="Apple,Orange" label="Add a tag" style="width:100%" data-options="
 				validType: ['length[3,10]','uniquetag']
 				">
 	</div>
 	<script type="text/javascript">
+		//看不懂
 		$.extend($.fn.validatebox.defaults.rules, {
 			uniquetag: {
 				validator: function(value, param){
