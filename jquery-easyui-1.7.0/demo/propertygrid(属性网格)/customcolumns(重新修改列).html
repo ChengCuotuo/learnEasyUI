@@ -13,6 +13,8 @@
 	<h2>Customize Columns of PropertyGrid</h2>
 	<p>The columns of PropertyGrid can be changed.</p>
 	<div style="margin:20px 0;"></div>
+	<!--可以改变属性表格的列.
+	数据显示的格式在 columns 中重新指定-->
 	<table class="easyui-propertygrid" style="width:300px" data-options="
 				url: 'propertygrid_data1.json',
 				method: 'get',
@@ -22,6 +24,7 @@
 			">
 	</table>
 	<script>
+		//将获取的数据重新命名，同时设置宽度，允许修改
 		var mycolumns = [[
     		{field:'name',title:'MyName',width:100,sortable:true},
    		    {field:'value',title:'MyValue',width:100,resizable:false}

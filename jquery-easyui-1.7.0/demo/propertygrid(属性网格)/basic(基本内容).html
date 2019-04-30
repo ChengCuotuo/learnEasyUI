@@ -19,6 +19,8 @@
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="hideHeader()">HideHeader</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getChanges()">GetChanges</a>
 	</div>
+	<!--基本属性网格，这要看 json 数据的内容，name，value是信息的键值对，group 相同的是同一类，
+	editor 表示属性网络在被修改的时候应该遵循的格式-->
 	<table id="pg" class="easyui-propertygrid" style="width:300px" data-options="
 				url:'propertygrid_data1.json',
 				method:'get',
@@ -28,6 +30,7 @@
 	</table>
 
 	<script type="text/javascript">
+		//是否显示组名
 		function showGroup(){
 			$('#pg').propertygrid({
 				showGroup:true
@@ -38,6 +41,7 @@
 				showGroup:false
 			});
 		}
+		//是否显示 header
 		function showHeader(){
 			$('#pg').propertygrid({
 				showHeader:true
@@ -48,8 +52,11 @@
 				showHeader:false
 			});
 		}
+
+		//显示修改的内容
 		function getChanges(){
 			var s = '';
+			//获取被修改的数据（一行）
 			var rows = $('#pg').propertygrid('getChanges');
 			for(var i=0; i<rows.length; i++){
 				s += rows[i].name + ':' + rows[i].value + ',';
