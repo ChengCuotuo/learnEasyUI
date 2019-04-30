@@ -15,13 +15,16 @@
 	<div style="margin:20px 0 40px 0;"></div>
     <div style="margin:10px 0 20px 0">
         <span>Select Icon Align: </span>
+		<!-- 当选择改变的时候触发事件，根据选中的值设置图标的位置 （left/right） -->
         <select onchange="$('#tt').textbox({iconAlign:this.value})">
             <option value="right">Right</option>
             <option value="left">Left</option>
         </select>
     </div>
+	<!-- 宽度扩充父标签 -->
 	<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
 		<div style="margin-bottom:20px">
+			<!-- 添加的图标有添加删除和搜寻 -->
 			<input id="tt" class="easyui-textbox" style="width:100%;" data-options="
 					label: 'Icons:',
 					labelPosition: 'top',

@@ -15,12 +15,17 @@
 	<div style="margin:20px 0;"></div>
 	<div class="easyui-panel" title="Login to system" style="width:100%;max-width:400px;padding:30px 60px;">
 		<div style="margin-bottom:10px">
-			<input class="easyui-textbox" style="width:100%;height:40px;padding:12px" data-options="prompt:'Username',iconCls:'icon-man',iconWidth:38">
+			<!-- prompt 是提示信息，同时指定标签 -->
+			<input class="easyui-textbox" style="width:100%;height:40px;padding:12px"
+				   data-options="prompt:'Username',iconCls:'icon-man',iconWidth:38">
 		</div>
 		<div style="margin-bottom:20px">
-			<input class="easyui-textbox" type="password" style="width:100%;height:40px;padding:12px" data-options="prompt:'Password',iconCls:'icon-lock',iconWidth:38">
+			<!-- 文本框的类型是密码文本框 -->
+			<input class="easyui-textbox" type="password" style="width:100%;height:40px;padding:12px"
+				   data-options="prompt:'Password',iconCls:'icon-lock',iconWidth:38">
 		</div>
 		<div style="margin-bottom:20px">
+			<!-- 复选选择框，默认被选中 -->
 			<input type="checkbox" checked="checked">
 			<span>Remember me</span>
 		</div>
