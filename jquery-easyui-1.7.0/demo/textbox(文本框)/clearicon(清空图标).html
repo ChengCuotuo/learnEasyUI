@@ -15,6 +15,8 @@
 	<div style="margin:20px 0 40px 0;"></div>
 	<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
 		<div style="margin-bottom:20px">
+			<!--这个文本框，在 js 代码中指定
+			这只默认值 value ，在文本框中添加了查找图标，并指定了它的功能-->
 			<input id="tt" style="width:100%;" data-options="
 					label: 'Email:',
 					labelPosition: 'top',
@@ -31,6 +33,7 @@
 		</div>
 	</div>
 	<script>
+		//看不懂
 		$.extend($.fn.textbox.methods, {
 			addClearBtn: function(jq, iconCls){
 				return jq.each(function(){
@@ -61,6 +64,7 @@
 		});
 		
 		$(function(){
+			//先设置为文本框，再获得文本框对象
 			$('#tt').textbox().textbox('addClearBtn', 'icon-clear');
 		});
 	</script>
