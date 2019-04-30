@@ -15,6 +15,8 @@
 	<div style="margin:20px 0;"></div>
 	<div id="cc" class="easyui-layout" style="width:700px;height:350px;">
 		<div data-options="region:'east',split:true,hideCollapsedContent:false" title="East" style="width:100px;"></div>
+		<!--默认折叠，同时设置隐藏折叠的内容，显示折叠之后的内容collapsedContent，设置折叠之后的尺寸collapsedSize
+		hideExpandTool 是折叠的按钮，将其隐藏-->
 		<div data-options="region:'west',split:true,collapsed:true,
 				hideExpandTool: true,
 				expandMode: null,
@@ -25,6 +27,7 @@
 				}
 				" title="West" style="width:100px;"></div>
 		<div data-options="region:'center',title:'Main Title'">
+			<!--文件获取方法是 get 通过url获取json数据，不设置边框，单选择，自适应父类标签的大小fit fitColumns-->
 			<table class="easyui-datagrid"
 					data-options="url:'datagrid_data1.json',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true">
 				<thead>
@@ -40,6 +43,7 @@
 			</table>
 		</div>
 	</div>
+	<!--超链接按钮，第一个按钮的功能是将west的面板打开-->
 	<div id="titlebar" style="padding:2px">
 		<a href="javascript:void(0)" class="easyui-linkbutton" style="width:100%" data-options="iconCls:'layout-button-right'" onclick="$('#cc').layout('expand','west')"></a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" style="width:100%" data-options="iconCls:'icon-large-picture',size:'large',iconAlign:'top'">Picture</a>
