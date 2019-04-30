@@ -24,10 +24,14 @@
 	<div id="viewer"></div>
 
 	<script type="text/javascript">
+		//定义密码框输入密码的闪存效果
+		//还是看不懂
 		$('#pass').passwordbox({
 			inputEvents: $.extend({}, $.fn.passwordbox.defaults.inputEvents, {
 				keypress: function(e){
+					//获取输入的字符
 					var char = String.fromCharCode(e.which);
+					//将输入的字符以淡入的动画添加到 viewer 中，时间是 200ms ，在淡出
 					$('#viewer').html(char).fadeIn(200, function(){
 						$(this).fadeOut();
 					});
