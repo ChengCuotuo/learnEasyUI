@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fluid Dialog - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Fluid Dialog</h2>
+	<p>This example shows how to set the width of Dialog to a percentage of its parent container.</p>
+	<div style="margin:20px 0;"></div>
+	<!-- 设置对话框，在 style 中设置 width 和 height 为百分数相对于父标签的大小
+	 	onResize 设置如果重新定义了对话框的大小，将该对话框放置在中间-->
+	<div class="easyui-dialog" title="Fluid Dialog" style="width:80%;height:200px;max-width:800px;padding:10px" data-options="
+			iconCls:'icon-save',
+			onResize:function(){
+				$(this).dialog('center');
+			}">
+		<p>width: 80%; height: 200px</p>
+	</div>
+</body>
+</html>

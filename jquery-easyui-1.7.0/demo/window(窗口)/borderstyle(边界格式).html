@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Window Border Style - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/color.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Window Border Style</h2>
+	<p>This example shows how to set the different border style.</p>
+	<div style="margin:20px 0;">
+	</div>
+	<div style="position:relative;overflow:auto;height:370px;border:1px solid #ddd">
+		<!--inline 定义如何放置窗口，当设置为 true 时则放在它的父容器里
+					当设置为 false 时则浮在所有元素的顶部
+			border 边框类型
+			draggable 是否可以拖拽
+			collapsible 是否可折叠
+			minimizable 是否可最小化
+			maximizable 是否可最大化
+			closable 是否可关闭
+			cls 给面板（panel）添加一个 CSS class-->
+		<div class="easyui-window" title="Window" data-options="width:300,height:150,left:10,top:10,inline:true">
+			<p class="w-content">Window content</p>
+		</div>
+		<div class="easyui-window" title="Window" data-options="width:300,height:150,left:320,top:10,inline:true,cls:'c1'">
+			<p class="w-content">Window content</p>
+		</div>
+		<div class="easyui-window" title="Window" data-options="width:300,height:150,left:630,top:10,inline:true,cls:'c2'">
+			<p class="w-content">Window content</p>
+		</div>
+		<div class="easyui-window" title="Window" data-options="width:300,height:150,left:10,top:180,inline:true,border:'thin',cls:'c5'">
+			<p class="w-content">Window content</p>
+		</div>
+		<div class="easyui-window" title="Window" data-options="width:300,height:150,left:320,top:180,inline:true,border:'thin',cls:'c6'">
+			<p class="w-content">Window content</p>
+		</div>
+		<div class="easyui-window" title="Window" data-options="width:300,height:150,left:630,top:180,inline:true,border:'thin',cls:'c7'">
+			<p class="w-content">Window content</p>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$('.easyui-window').window({
+			collapsible: false,
+			minimizable: false,
+			maximizable: false,
+			closable: false
+		});
+	</script>
+	<style type="text/css" scoped="scoped">
+		.w-content{
+			padding:5px 10px;
+		}
+	</style>
+</body>
+</html>
