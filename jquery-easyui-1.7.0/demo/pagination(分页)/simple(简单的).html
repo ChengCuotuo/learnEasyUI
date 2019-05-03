@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Simplify Pagination - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Simplify Pagination</h2>
+	<p>The sample shows how to simplify pagination.</p>
+	<div style="margin:20px 0;"></div>
+	<!-- total 设置总页数
+	 	showPageList 是否显示页面列表
+	 	showPageInfo 是否显示分页的信息
+	 	showRefresh 是否显示刷新页面按钮
+	 	-->
+	<div class="easyui-panel">
+		<div class="easyui-pagination" data-options="
+					total: 114,
+					showPageList: false,
+					showPageInfo: false,
+					showRefresh: false
+				"></div>
+	</div>
+</body>
+</html>

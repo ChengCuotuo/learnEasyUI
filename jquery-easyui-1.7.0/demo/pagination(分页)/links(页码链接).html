@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pagination Links - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Pagination Links</h2>
+	<p>The example shows how to customize numbered pagination links.</p>
+	<div style="margin:20px 0;"></div>
+	<div class="easyui-panel">
+	<!--
+		1、list：页面尺寸列表。
+		2、sep：页面按钮分割, 也就是一个 竖线 将两个按钮分割开来
+		3、first：第一个按钮。
+		4、prev：前一个按钮。
+		5、next：后一个按钮。
+		6、last：最后一个按钮。
+		7、efresh：刷新按钮。
+		8、manual：允许输入域页码的手动页码输入框。
+		9、links：页码链接。
+		10、info 分页信息
+	-->
+		<div class="easyui-pagination" data-options="
+					total:114,
+					layout:['list','sep','first','prev','links','next','last','sep','refresh','info']
+				"></div>
+	</div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Basic DataGrid - jQuery EasyUI Demo</title>
+	<title>DataGrid Cell Style - jQuery EasyUI Demo</title>
 	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="../demo.css">
@@ -10,27 +10,35 @@
 	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
 </head>
 <body>
-	<h2>Basic DataGrid</h2>
-	<p>The DataGrid is created from markup, no JavaScript code needed.</p>
+	<h2>DataGrid Cell Style</h2>
+	<p>The cells which listprice value is less than 30 are highlighted.</p>
 	<div style="margin:20px 0;"></div>
-	<!--使用一个二维表显示数据
-		singleSelect 是否单选
-		collapsible 是否可折叠
-		使用的是 ajax 方式加载数据
-		th 中设置表头，同事 field 中设置的是该列对应的数据-->
-	<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
-			data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+	<table class="easyui-datagrid" title="DataGrid Cell Style" style="width:700px;height:250px"
+			data-options="
+				singleSelect: true,
+				iconCls: 'icon-save',
+				url: 'datagrid_data1.json',
+				method: 'get'
+			">
 		<thead>
 			<tr>
 				<th data-options="field:'itemid',width:80">Item ID</th>
 				<th data-options="field:'productid',width:100">Product</th>
-				<th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+				<!-- 事件 styler 可以对数据显示进行特别处理 -->
+				<th data-options="field:'listprice',width:80,align:'right',styler:cellStyler">List Price</th>
 				<th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
 				<th data-options="field:'attr1',width:250">Attribute</th>
 				<th data-options="field:'status',width:60,align:'center'">Status</th>
 			</tr>
 		</thead>
 	</table>
-
+	<script type="text/javascript">
+		function cellStyler(value,row,index){
+			if (value < 30){
+			    // 当取值小于 30 将修改它的背景颜色
+				return 'background-color:#ffee00;color:red;';
+			}
+		}
+	</script>
 </body>
 </html>

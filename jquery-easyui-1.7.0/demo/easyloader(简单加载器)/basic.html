@@ -26,6 +26,7 @@
 	<script type="text/javascript" src="../../easyloader.js"></script>
 	<script>
 		function load1(){
+		    // 加载日历
 			using('calendar', function(){
 				$('#cc').calendar({
 					width:180,
@@ -34,6 +35,7 @@
 			});
 		}
 		function load2(){
+		    // 加载对话
 			using(['dialog','messager'], function(){
 				$('#dd').dialog({
 					title:'Dialog',
@@ -47,6 +49,7 @@
 			});
 		}
 		function load3(){
+		    // 加载数据网格
 			using('datagrid', function(){
 				$('#tt').datagrid({
 					title:'DataGrid',
